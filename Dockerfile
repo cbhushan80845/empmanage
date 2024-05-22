@@ -1,8 +1,5 @@
-FROM openjdk:11-jre-slim
+FROM openjdk:17-jdk-alpine
 
+ADD target/employeeManagement.jar employeeManagement.jar
 
-COPY target/employeeManagement.jar /app/employeeManagement.jar
-
-EXPOSE 8080
-
-CMD ["java", "-jar", "employeeManagement.jar"]
+ENTRYPOINT ["java","-jar","employeeManagement.jar"]
